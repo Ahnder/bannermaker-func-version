@@ -18,11 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      <h4>Banner Maker</h4>
       <CanvasComponent color={color} text={text} />
-      <br />
       <TextInputComponent onChangeText={onChangeText} />
-      <br />
       <PaletteComponent color={color} onChangeColor={onChangeColor} />
     </div>
   );

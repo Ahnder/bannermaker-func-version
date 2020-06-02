@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import './CanvasComponent.css';
 
 function setFont(canvas, text, args) {
   const ctx = canvas.getContext('2d');

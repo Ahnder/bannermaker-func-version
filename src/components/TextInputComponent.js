@@ -1,4 +1,5 @@
 import React from 'react';
+import './TextInputComponent.css';
 
 const TextInputComponent = ({ onChangeText }) => {
   return (
