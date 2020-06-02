@@ -3,14 +3,14 @@ import './PaletteComponent.css';
 
 import { CirclePicker, HuePicker } from 'react-color';
 
-const PaletteComponent = () => {
+const PaletteComponent = ({ color, onChangeColor }) => {
   return (
     <div className="paletteWrapper">
       <div className="circlePicker">
-        <CirclePicker />
+        <CirclePicker color={color} onChange={onChangeColor} />
       </div>
       <div className="huePicker">
-        <HuePicker />
+        <HuePicker color={color} onChange={onChangeColor} />
       </div>
     </div>
   );

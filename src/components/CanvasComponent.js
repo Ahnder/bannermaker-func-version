@@ -26,7 +26,7 @@ const CanvasComponent = ({ color, text }) => {
       size: '40',
       font: 'Arial',
     });
-  }, []);
+  }, [color, text]);
 
   return <canvas ref={ref} width="700" height="350" />;
 };

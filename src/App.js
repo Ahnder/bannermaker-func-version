@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 
 import CanvasComponent from './components/CanvasComponent';
@@ -9,14 +9,21 @@ function App() {
   const [color, setColor] = useState('violet');
   const [text, setText] = useState('Sample Text');
 
+  const onChangeColor = useCallback((color) => {
+    setColor(color.hex);
+  }, []);
+  const onChangeText = useCallback((e) => {
+    setText(e.target.value);
+  }, []);
+
   return (
     <div className="App">
       <h4>Banner Maker</h4>
       <CanvasComponent color={color} text={text} />
       <br />
-      <TextInputComponent />
+      <TextInputComponent onChangeText={onChangeText} />
       <br />
-      <PaletteComponent />
+      <PaletteComponent color={color} onChangeColor={onChangeColor} />
     </div>
   );
 }
