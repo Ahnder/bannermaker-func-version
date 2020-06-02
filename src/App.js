@@ -5,8 +5,10 @@ import CanvasComponent from './components/CanvasComponent';
 import TextInputComponent from './components/TextInputComponent';
 import PaletteComponent from './components/PaletteComponent';
 
+import randomColorSelector from './lib/api/randomColorSelector';
+
 function App() {
-  const [color, setColor] = useState('violet');
+  const [color, setColor] = useState(randomColorSelector());
   const [text, setText] = useState('Sample Text');
 
   const onChangeColor = useCallback((color) => {
