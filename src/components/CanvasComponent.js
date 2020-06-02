@@ -12,7 +12,12 @@ function setFont(canvas, text, args) {
   ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 }
 
-const CanvasComponent = ({ color, text }) => {
+function setImgHref(canvas, href, func) {
+  const url = canvas.toDataURL();
+  href !== url && func(url);
+}
+
+const CanvasComponent = ({ color, text, href, onChangeHref }) => {
   const ref = useRef();
 
   useEffect(() => {
@@ -27,7 +32,9 @@ const CanvasComponent = ({ color, text }) => {
       size: '40',
       font: 'Arial',
     });
-  }, [color, text]);
+
+    setImgHref(canvas, href, onChangeHref);
+  }, [color, text, href, onChangeHref]);
 
   return <canvas ref={ref} width="700" height="350" />;
 };
