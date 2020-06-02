@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
 
+import CanvasComponent from './components/CanvasComponent';
+import TextInputComponent from './components/TextInputComponent';
+import PaletteComponent from './components/PaletteComponent';
+
 function App() {
   return (
     <div className="App">
-      <canvas
-        width="700"
-        height="350"
-        style={{
-          background: 'skyblue',
-        }}
-      />
+      <CanvasComponent />
+      <TextInputComponent />
+      <PaletteComponent />
     </div>
   );
 }
