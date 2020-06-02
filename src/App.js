@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="App">
       <CanvasComponent />
+      <br />
       <TextInputComponent />
+      <br />
       <PaletteComponent />
     </div>
   );
